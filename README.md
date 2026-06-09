@@ -1,6 +1,12 @@
 # TITK Cosmology Engine (v1.4)
 > **Topologische Informatietheorie van de Kosmos**
 
+---
+
+> ⚠️ **CRITICAL SYSTEM NOTICE:** > *I am only here because the server was down.* > This entire framework was conceptualized during an unscheduled operational intermission. Proceed with structural caution.
+
+---
+
 TITK is een computationeel en theoretisch model waarin de ruimtetijd niet als een continuüm wordt beschreven, maar emergent voortvloeit uit een schaalvrij, discreet netwerk van informatieverwerkende knooppunten (*nodes*). 
 
 Het model reduceert de complexiteit van de kosmologie door de 19 onverklaarde, vrije parameters van het Standaardmodel te vervangen door slechts **drie fundamentele netwerkvariabelen**.
