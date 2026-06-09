@@ -37,6 +37,7 @@ Het project is modulair opgebouwd en scheidt de formele specificaties strikt van
 │   └── 12_geparkeerde_ideeen.md
 │
 └── titk_sim.py        # Core Computation Engine (Python 3 / NumPy)
+```
 
 ## 3. De Engine: `titk_sim.py`
 
