@@ -20,33 +20,58 @@ Wanneer de lokale netwerkdichtheid de kritieke waarde $Q_{max}$ overschrijdt, ra
 
 Dit levert binnen TITK de exacte mechanistische verklaring voor wat de klassieke fysica omschrijft als een **zwart gat**: het is geen oneindige massa-oneindigheid (singulariteit), maar een zone waar de netwerk-latency asymptotisch oneindig wordt omdat de maximale *queue depth* ($Q_{max}$) is bereikt.
 
-### 4.3 Theoretische Grenswaarden & Systeemlimieten
+---
 
-####  De Onmogelijkheid van Faster-Than-Light (FTL) Informatieoverdracht
-Binnen het Topological Information Theoretical Kernel (TITK) model is de lichtsnelheid ($c$) geen arbitraire geometrische constante, maar de fundamentele **I/O-limiet van de netwerktopologie**. Ruimte en tijd zijn immers emergent en vloeien voort uit de opeenvolgende interacties en state-transities tussen onderlinge nodes. 
+# 4.3 Theoretische Grenswaarden & Systeemlimieten
 
-FTL-reizen of informatieoverdracht is binnen dit framework computationeel onmogelijk vanwege drie harde netwerk-technische barrières:
+## De Onmogelijkheid van Faster-Than-Light (FTL) Informatieoverdracht
 
-##### I. De Kosmische Systeemklok (Transitie-limiet)
-De basissnelheid van het netwerk wordt bepaald door de tijd die één topologische sprong (een informatie-update tussen twee direct verbonden nodes) kost:
+Binnen TITK is de lichtsnelheid ($c$) geen arbitraire geometrische constante, maar de fundamentele **I/O-limiet van de netwerktopologie**. Ruimte en tijd zijn emergent — zij vloeien voort uit de opeenvolgende interacties en toestandsovergangen tussen nodes. FTL-informatieoverdracht is binnen dit framework computationeel onmogelijk vanwege drie harde netwerkbarrières.
 
-$$\Delta t_{min} = 1 \text{ netwerk-tick}$$
+---
 
-Sneller gaan dan de lichtsnelheid zou betekenen dat een informatie-pakketje een node overslaat of arriveert *voordat* de lokale netwerkcyclus heeft plaatsgevonden. Een subsysteem kan niet sneller muteren dan de kloksnelheid van de processor waar het op draait.
+### I. De Kosmische Systeemklok (Transitie-limiet)
 
-##### II. Topologische Deadlocks (De Kosmische Race Condition)
-Als informatie zich sneller door de topologie zou verplaatsen dan de causale update-signalen kunnen propageren, ontstaat er een computationele **Race Condition**. 
+De basissnelheid van het netwerk wordt bepaald door de minimale tijd voor één topologische sprong:
 
-* Een Node B zou een status aannemen op basis van een input uit Node A, nog voordat de causale link in de omliggende topologie is verwerkt.
-* Dit resulteert in een niet-causale feedback-loop waarin een output zijn eigen input overschrijft of wist.
-* Om de data-integriteit en causale consistentie van de kosmos te bewaken, spert het netwerk deze optie mathematisch af; FTL leidt tot een logische `Deadlock`.
+$$\Delta t_{min} = 1 \text{ netwerk-tick} = T_{obs}$$
 
-##### III. De Oneindige Bandbreedte Paradox (Massa-toename)
-In de klassieke relativiteitstheorie heeft een object op lichtsnelheid oneindig veel energie nodig. Binnen TITK vertaalt 'massa/energie' zich naar **informatiedichtheid en routing-complexiteit**.
+Sneller gaan dan $c$ zou betekenen dat een informatiepakket een node overslaat, of arriveert *voordat* de lokale netwerkcyclus heeft plaatsgevonden. Een subsysteem kan niet sneller muteren dan de kloksnelheid van de processor waarop het draait.
 
-* Naarmate een object de snelheid $c$ nadert, dwingt de Lorentz-contractie het netwerk om de data over een steeds compacter cluster van nodes te berekenen.
-* Om exact de grens van $c$ te passeren, zou de transitie-load (het aantal netwerk-updates per klokcyclus) naar oneindig schieten. 
-* FTL is onmogelijk omdat het de totale verwerkingscapaciteit (bandbreedte) van het universele netwerk overschrijdt. Tijddilatatie treedt hierbij op als een automatische *rate-limiter* (buffer) om een lokale data-overflow te voorkomen.
+**Verband met T_eff:** De lokale tijddilatatie ($T_{eff}$) werkt als een automatische *rate-limiter*. Bij hogere informatiedichtheid stijgt $T_{eff}$, daalt $\Phi_{ext}$, en vertraagt de effectieve propagatiesnelheid — zonder dat $c$ zelf verandert. Tijddilatatie is in TITK geen geometrisch effect maar een verwerkingsbudget-effect. Dit is de mechanistische verklaring van de Schwarzschild-metriek (zie Spec v1.4, Sectie 1).
 
-> **TITK Postulaat omtrent Causaliteit:** *Faster-Than-Light (FTL) is binnen een informatietheoretische topologie een ongedefinieerde bewerking. De natuurkundige limiet $c$ is de maximale doorvoersnelheid van causale netwerk-updates. Het overschrijden van deze limiet is inherent gelijk aan het crashen van de lokale netwerkintegriteit.*
+---
 
+### II. Topologische Deadlocks (De Kosmische Race Condition)
+
+Als informatie zich sneller door de topologie zou verplaatsen dan causale updatesignalen kunnen propageren, ontstaat een computationele **Race Condition**:
+
+- Node B neemt een toestand aan op basis van input van Node A, nog voordat de causale link in de omliggende topologie is verwerkt.
+- Dit resulteert in een niet-causale feedbackloop waarin een output zijn eigen input overschrijft of wist.
+- Het netwerk spert deze optie mathematisch af: FTL leidt tot een logische `Deadlock` die de data-integriteit van de kosmos zou vernietigen.
+
+**Verband met het Consolidatieprincipe:** De consolidatieoperatie (Spec 1.3.1, Sectie 2.2) is de mechanisme waarmee het netwerk deadlocks voorkomt — door causale bijdragen te absorberen zodra zij volledig zijn verwerkt, wordt de feedbackloop gesloten voordat hij recursief kan worden.
+
+---
+
+### III. De Oneindige Bandbreedte Paradox (Massa-toename bij $v \to c$)
+
+In de klassieke relativiteitstheorie heeft een object op lichtsnelheid oneindig veel energie nodig. In TITK vertaalt massa/energie zich naar **informatiedichtheid en routingcomplexiteit**:
+
+- Naarmate een object $c$ nadert, dwingt de Lorentz-contractie het netwerk om de data over een steeds compacter cluster van nodes te berekenen.
+- De transitie-load (het aantal netwerk-updates per klokcyclus) nadert oneindig bij $v \to c$.
+- FTL is onmogelijk omdat het de totale verwerkingscapaciteit ($W_{max}$) van het universele netwerk zou overschrijden.
+
+$$v \to c \implies T_{eff} \to W_{max} \implies \Phi_{ext} \to 0$$
+
+Dit is identiek aan de zwart gat conditie (Spec 1.3.1, Sectie 4.2) — een object dat $c$ bereikt verzadigt zijn eigen queue. FTL en zwarte gaten zijn in TITK hetzelfde fenomeen op verschillende schalen.
+
+---
+
+### TITK Postulaat omtrent Causaliteit
+
+> *Faster-Than-Light (FTL) is binnen een informatietheoretische topologie een ongedefinieerde bewerking. De natuurkundige limiet $c$ is de maximale doorvoersnelheid van causale netwerk-updates. Het overschrijden van deze limiet is inherent gelijk aan het crashen van de lokale netwerkintegriteit.*
+
+---
+
+*Sectie toegevoegd: juni 2026 — v1.4*
